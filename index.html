@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking Class - Premium Coaching</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element" style="font-size: 4rem;">💰</div>
+    <div class="floating-element" style="font-size: 3rem;">📚</div>
+    <div class="floating-element" style="font-size: 3.5rem;">🎯</div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="logo">🏦 Banking Academy</h1>
+            <p class="tagline">Your Gateway to Banking Success</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h2 class="hero-title">Online Banking Class</h2>
+                
+                <div class="session-details">
+                    <div class="session-time">
+                        🕙 10 AM - 1 PM
+                    </div>
+                    <h3 style="color: white; text-align: center; margin-bottom: 1rem; font-size: 1.4rem;">Group Session Topics</h3>
+                    
+                    <div class="topics-grid">
+                        <div class="topic-card">
+                            <span class="topic-icon">🔢</span>
+                            <div class="topic-name">Quantitative Aptitude</div>
+                            <button class="button" onclick="window.location.href='Apti.html'">Syllabus</button>                        </div>
+                            <div class="topic-card">
+                                <span class="topic-icon">🇬🇧</span>
+                                <div class="topic-name">English Language</div>
+                                <button class="button" onclick="window.location.href='English.html'">Syllabus</button>                        </div>
+                            </div>
+                            <div class="topic-card">
+                                <span class="topic-icon">📰</span>
+                                <div class="topic-name">Reasoning</div>
+                                <button class="button" onclick="window.location.href='Logic.html'">Syllabus</button>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-section">
+                <h2 class="features-title">✨ What You Get</h2>
+                
+                <div class="feature-item">
+                    <h3><span class="feature-icon">📝</span>Daily Current Affairs</h3>
+                    <p>Comprehensive daily current affairs notes to keep you updated with the latest happenings</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="feature-icon">🎯</span>English Guidance</h3>
+                    <p>Expert guidance and tips to improve your English language skills for banking exams</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="feature-icon">👥</span>Group Learning</h3>
+                    <p>Interactive group sessions for better understanding and peer learning experience</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="feature-icon">⏰</span>Flexible Timing</h3>
+                    <p>Convenient 3-hour morning sessions designed for working professionals</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="pricing-section">
+            <div class="pricing-card">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">Regular Fee</h3>
+                <div class="price">₹5,000</div>
+                <div class="price-period">per month</div>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Complete banking exam preparation with all study materials</p>
+                <button class="cta-button" onclick="openEnquiryForm()">Enroll Now</button>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 1rem;">Early Bird Special</h3>
+                <div style="margin-bottom: 1rem;">
+                    <span class="original-price">₹5,000</span>
+                    <span class="price">₹4,500</span>
+                </div>
+                <div class="price-period">per month</div>
+                <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Limited time offer for first 5 students only!</p>
+                <button class="cta-button" onclick="openEnquiryForm()">Grab Discount</button>
+            </div>
+        </div>
+
+        <!-- Contact & Enquiry Section -->
+        <div class="contact-section">
+            <div class="contact-info">
+                <h2 class="section-title">📞 Contact Us</h2>
+                
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Phone</h3>
+                        <p>+91 98765 43210</p>
+                        <p>+91 87654 32109</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>info@bankingacademy.com</p>
+                        <p>support@bankingacademy.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Coimbatore, Tamil Nadu</p>
+                        <p>Online Classes Available</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">⏰</div>
+                        <h3>Office Hours</h3>
+                        <p>Mon - Sat: 9 AM - 6 PM</p>
+                        <p>Sunday: 10 AM - 4 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enquiry-form-container">
+                <h2 class="section-title">💬 Quick Enquiry</h2>
+                <form class="enquiry-form" id="enquiryForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="course" name="course" required>
+                            <option value="">Select Course Interest</option>
+                            <option value="banking-regular">Banking Course - Regular (₹5,000)</option>
+                            <option value="banking-discount">Banking Course - Early Bird (₹4,500)</option>
+                            <option value="custom">Custom Package</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message or Questions (Optional)" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        Send Enquiry 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Enquiry Form -->
+    <div id="enquiryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeEnquiryForm()">&times;</span>
+            <h2 style="color: #333; margin-bottom: 1rem; text-align: center;">Quick Enrollment Form</h2>
+            <form class="modal-form" id="modalEnquiryForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select name="course" required>
+                        <option value="">Select Course</option>
+                        <option value="regular">Regular Course - ₹5,000/month</option>
+                        <option value="discount">Early Bird - ₹4,500/month</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Any specific requirements?" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <div class="container">
+    <div class="header">
+      <h1 class="topic-icon">Reasoning Topics 🤔</h1>
+    </div>
+
+    <div class="main-content">
+      <div class="hero-section">
+        <h2 class="topic-name">The reasoning topics for bank exams (pre + mains) as per the syllabus are:</h2>
+
+        <dl class="syllabus-list">
+          <!-- Miscellaneous -->
+          <dt>
+           
+           <u> <label for="misc" class="topic-name">Miscellaneous Topics</label></u>
+          </dt>
+          <dd>
+            <ul class="lspace">
+              <li>Inequality</li>
+              <li>Syllogism</li>
+              <li>Alphabet Test</li>
+              <li>Blood Relation</li>
+              <li>Coding Decoding</li>
+              <li>Direction & Distance</li>
+              <li>Order & Ranking</li>
+            </ul>
+          </dd>
+
+          <!-- Puzzles and Seating -->
+          <dt>
+           
+           <u> <label for="puzzles" class="topic-name">Puzzles and Seating Arrangement</label></u>
+          </dt>
+          <dd>
+            <ul class="lspace">
+              <li>Floor & Flat Based Puzzle</li>
+              <li>Box Based Puzzle</li>
+              <li>Month/Day/Year Based Puzzle</li>
+              <li>Comparison Based Puzzle</li>
+              <li>Certain Number of Persons</li>
+              <li>Blood Relation Puzzle</li>
+              <li>Direction Based Puzzle</li>
+              <li>Circular/Double Circular Arrangement</li>
+              <li>Rectangular/Square/Triangular Arrangement</li>
+              <li>Two Parallel Lines Arrangement</li>
+              <li>Straight Line Arrangement</li>
+            </ul>
+          </dd>
+
+          <!-- Logical/Analytical -->
+          <dt>
+           
+            <u><label for="logical" class="topic-name">Logical/Analytical Reasoning</label></u>
+          </dt>
+          <dd>
+            <ul class="lspace">
+              <li>Data Sufficiency</li>
+              <li>Machine Input Output</li>
+            </ul>
+          </dd>
+        </dl>
+
+      </div>
+    </div>
+  </div>
+
+    <script>
+    document.querySelectorAll('.topic-list dt').forEach(dt => {
+        dt.addEventListener('click', () => {
+            dt.classList.toggle('active');
+            let next = dt.nextElementSibling;
+            while (next && next.tagName.toLowerCase() === 'dd') {
+                next.style.display = (next.style.display === 'block') ? 'none' : 'block';
+                next = next.nextElementSibling;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
