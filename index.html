@@ -35,17 +35,17 @@
                         <div class="topic-card">
                             <span class="topic-icon">🔢</span>
                             <div class="topic-name">Quantitative Aptitude</div>
-                            <button class="button" onclick="window.location.href='Apti.html'">Syllabus</button>                        </div>
-                            <div class="topic-card">
-                                <span class="topic-icon">🇬🇧</span>
-                                <div class="topic-name">English Language</div>
-                                <button class="button" onclick="window.location.href='English.html'">Syllabus</button>                        </div>
-                            </div>
-                            <div class="topic-card">
-                                <span class="topic-icon">📰</span>
-                                <div class="topic-name">Reasoning</div>
-                                <button class="button" onclick="window.location.href='Logical.html'">Syllabus</button>   
-                            </div>
+                            <button class="button" onclick="window.location.href='Apti.html'">Syllabus</button>
+                        </div>
+                        <div class="topic-card">
+                            <span class="topic-icon">🇬🇧</span>
+                            <div class="topic-name">English Language</div>
+                            <button class="button" onclick="window.location.href='English.html'">Syllabus</button>
+                        </div>
+                        <div class="topic-card">
+                            <span class="topic-icon">📰</span>
+                            <div class="topic-name">Reasoning</div>
+                            <button class="button" onclick="window.location.href='Logical.html'">Syllabus</button>   
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
             </div>
         </div>
 
-        <!-- Contact & Enquiry Section -->
+        <!-- Contact Section -->
         <div class="contact-section">
             <div class="contact-info">
                 <h2 class="section-title">📞 Contact Us</h2>
@@ -108,15 +108,14 @@
                     <div class="contact-card">
                         <div class="contact-icon">📱</div>
                         <h3>Phone</h3>
-                        <p>+91 98765 43210</p>
-                        <p>+91 87654 32109</p>
+                        <p>+91 9442951713</p>
+                        <button class="button" onclick="openWhatsApp()" style="margin-top: 10px;">💬 Chat on WhatsApp</button>
                     </div>
                     
                     <div class="contact-card">
                         <div class="contact-icon">✉️</div>
                         <h3>Email</h3>
-                        <p>info@bankingacademy.com</p>
-                        <p>support@bankingacademy.com</p>
+                        <p>ramasamysangeeth@gmail.com</p>
                     </div>
                     
                     <div class="contact-card">
@@ -133,40 +132,6 @@
                         <p>Sunday: 10 AM - 4 PM</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="enquiry-form-container">
-                <h2 class="section-title">💬 Quick Enquiry</h2>
-                <form class="enquiry-form" id="enquiryForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select id="course" name="course" required>
-                            <option value="">Select Course Interest</option>
-                            <option value="banking-regular">Banking Course - Regular (₹5,000)</option>
-                            <option value="banking-discount">Banking Course - Early Bird (₹4,500)</option>
-                            <option value="custom">Custom Package</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message or Questions (Optional)" rows="4"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">
-                        Send Enquiry 🚀
-                    </button>
-                </form>
             </div>
         </div>
     </div>
@@ -201,7 +166,79 @@
         </div>
     </div>
 
-    <!-- Include JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        function openWhatsApp() {
+            const message = `Hi! I'm interested in the Banking Course. Please provide more details.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappNumber = '919442951713';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function openEnquiryForm() {
+            document.getElementById('enquiryModal').style.display = 'block';
+        }
+
+        function closeEnquiryForm() {
+            document.getElementById('enquiryModal').style.display = 'none';
+        }
+
+       
+        window.onclick = function(event) {
+            var modal = document.getElementById('enquiryModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+       
+        document.getElementById('modalEnquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const course = formData.get('course');
+            const message = formData.get('message') || 'No additional message';
+            
+            const whatsappMessage = `*New Banking Course Enquiry*
+
+👤 *Name:* ${name}
+📧 *Email:* ${email}
+📱 *Phone:* ${phone}
+📚 *Course:* ${course}
+💬 *Message:* ${message}
+
+*Sent from Banking Academy Website*`;
+            
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            
+            const whatsappNumber = '919442951713';
+            
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            
+            window.open(whatsappURL, '_blank');
+            showNotification('Redirecting to WhatsApp... Please send the message to complete your enquiry!', 'success');
+            closeEnquiryForm();
+            this.reset();
+        });
+
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+    </script>
 </body>
 </html>
